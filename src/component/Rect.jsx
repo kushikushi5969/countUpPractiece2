@@ -61,6 +61,7 @@ export default class Rect extends React.Component {
       height: 30,
       textAlign: 'center',
       verticalAlign: 'center',
+      cursor: 'pointer'
     }
 
     // DOMが複数行になる場合は()で囲む
