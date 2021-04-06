@@ -1,6 +1,11 @@
 import React from 'react'
 import Rect from './Rect.jsx'
 
+
+const TextInput = (props) => {
+  return <input ref={props.inputRef} />
+}
+
 export default class App extends React.Component {
 
     constructor (props) {
@@ -24,6 +29,16 @@ export default class App extends React.Component {
       this.done.current.style.display = ''
     }
 
+    // フォーカス
+    focusInput = () => {
+      this.input.focus()
+    }
+
+    // 入力連動
+    changeInput = () => {
+      this.textInput.value = this.input.value
+    }
+
     render () {
       return (
         <>
@@ -35,6 +50,16 @@ export default class App extends React.Component {
           <input type='file' ref={this.upload} style={{display: 'none'}} onChange={this.handleUpload} />
           <button onClick={() => this.upload.current.click()}>アップロード</button>
           <div ref={this.done} style={{display: 'none'}}>アップロード完了</div>
+          <div>
+            <div>
+              {/* <input type="text" ref={(input) => { this.input = input }} /> */}
+              <button onClick={this.focusInput}>入力フォーカス</button>
+            </div>
+          </div>
+          <div>
+            <input type="text" ref={(input) => { this.input = input }} onChange={this.changeInput} />
+            <TextInput inputRef={el => this.textInput = el} />
+          </div>
         </>
       )
     }
