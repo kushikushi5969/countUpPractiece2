@@ -2,6 +2,7 @@ import React from 'react'
 import Rect from './Rect.jsx'
 import Handleupload from './Handleupload.jsx'
 import Input from './Input.jsx'
+import Count from './Count.jsx'
 
 
 
@@ -19,6 +20,8 @@ export default class App extends React.Component {
           <Handleupload />
           <h1>Text Input</h1>
           <Input />
+          <h1>Count Hook!</h1>
+          <Count />
         </>
       )
     }
