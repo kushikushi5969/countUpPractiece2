@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Rect from './Rect.jsx'
 import Handleupload from './Handleupload.jsx'
 import Input from './Input.jsx'
 import Count from './Count.jsx'
+import Timer from './UseEffect.jsx'
 
 
 
@@ -22,6 +23,8 @@ export default class App extends React.Component {
           <Input />
           <h1>Count Hook!</h1>
           <Count />
+          <h1>Timer Count</h1>
+          <Timer />
         </>
       )
     }
